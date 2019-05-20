@@ -6,7 +6,7 @@ Para a execução desse projeto e necessário ter o "node e mongoDb "  instalado
 
 1 - Baixe o projeto
 
-2 - Abra o terminal
+2 - Abra o terminal e navegue até a pasta do projeto
 
 3 - Execute o coomando "npm install" na raiz do projeto onde está localizado o arquivio "package.json"
 
