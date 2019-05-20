@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+    <head>
+        <title>Jogo da Memória</title>
+        <link href="assets/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+            <header>
+                   
+                    <div class="navbar navbar-dark bg-dark shadow-sm">
+                      <div class="container d-flex justify-content-between">
+                        <a href="#/signin" class="navbar-brand d-flex align-items-center">
+                         
+                          <strong>Jogo da Memoria</strong>
+                        </a>
+                       
+                      </div>
+                    </div>
+                  </header>
+
+                <main role="main">
+                    <div class=" py-5 bg-light">
+                    <div class="container">
+                        <row class="col-md-12">
+                            <ng-view class="view"></ng-view>   
+                        </row>
+                        
+                        </div><!-- fim container -->
+                    </div>
+                      
+                </main>   
+                
+                
+       
+    </body>
+    <script src="assets/js/scripts.js"></script>
+</html>

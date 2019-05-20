@@ -1,0 +1,44 @@
+
+<div class="row"ng-show="!vm.terminou">
+    <div class="col-md-3 "> Jogador: {{vm.nomeJogador}} </div>
+    <div class="col-md-3 text-primary "> Rodadas: {{vm.erros + vm.acertos}} </div>
+    <div class="col-md-3 text-danger" >Erros: {{vm.erros}}</div>
+    <div class="col-md-3 text-success" >Acertos: {{vm.acertos}}</div>
+
+</div>	
+
+<div class="row" ng-show="vm.terminou">
+        <div class="col-md-12">
+            Parabens!!! Você finalizou o jogo. com {{vm.erros + vm.acertos }} rodadas!!
+            <button class="btn btn-success float-right" ng-model="button"
+                     ng-click="vm.redirecionarPagina()"  > 
+                     Jogar
+            </button>
+        </div>
+</div>
+<div class="row" ng-show="!vm.terminou">
+    <div class="col-md-2" ng-repeat=" item in vm.imagens">
+        <div class="flip-container" ng-click="vm.virarCarta(item)">  
+            <div class="flipper" ng-class="{'viraCarta': item.virada}"> 
+                <div class="front">  			
+                   <img src="assets/img/fundoCarta.png"  />
+                </div>  
+                
+                <div class="back">  			
+                     <span class="centro">
+                        <i class="{{item.icon}}" style="margin-top: 14px;"></i>
+                    </span> 		
+                   
+                </div>  
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  
+   
+
