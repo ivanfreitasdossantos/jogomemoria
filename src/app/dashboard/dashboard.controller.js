@@ -66,6 +66,8 @@
        
 
         vm.virarCarta = function(carta){ 
+            if(carta.virada) return;
+
             if(vm.cartaUm &&  vm.cartaDois){
                 return
             }   
@@ -122,7 +124,7 @@
                 }
             }); 
             
-            if(vm.contadorCartas == 40){
+            if(vm.contadorCartas ==  vm.imagens.length){
                 cadastrarRanking();
             }
             
