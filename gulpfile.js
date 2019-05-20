@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
-const image = require('gulp-image');
 const scripts = require('./scripts');
 const styles = require('./styles');
  
@@ -28,14 +27,6 @@ gulp.task('js', function() {
         }));
 });
  
-gulp.task('image', function () {
-    gulp.src('./src/assets/img/*')
-        .pipe(image())
-        .pipe(gulp.dest('./dist/assets/img'))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
-});
  
 gulp.task('fonts', function() {
     return gulp.src(['./node_modules/font-awesome/fonts/fontawesome-webfont.*'])
@@ -51,7 +42,7 @@ gulp.task('html', function() {
 });
  
 gulp.task('build', function() {
-    gulp.start(['css', 'js', 'image', 'fonts', 'html'])
+    gulp.start(['css', 'js', 'fonts', 'html'])
 });
  
 gulp.task('browser-sync', function() {
