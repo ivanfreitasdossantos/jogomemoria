@@ -12,6 +12,7 @@ var express = require('express'),
     docRanking = db.get('docRanking'),
     cors = require('cors');
 
+app.use(cors());
 
 app.use(bodyParser.json({
   limit: '6mb'
@@ -24,25 +25,17 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-app.post('/cadastrarRanking', function(req, res) {
+app.post('/ranking', function(req, res) {
     docRanking.insert(req.body.data, {}, function (e, r) {
 		res.send("Dados Inseridos");
 	});
 });
 
-app.get('/buscarRanking', async function(req, res) {
+app.get('/ranking', async function(req, res) {
 
   let listaRanking = await docRanking.find();
   res.send(listaRanking);
 });
-
-
 
 app.listen(port, ip, () => {
   console.log(`Servidor rodando em http://${ip}:${port}`)

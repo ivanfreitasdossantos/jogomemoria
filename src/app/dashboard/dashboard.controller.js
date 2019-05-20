@@ -8,7 +8,6 @@
        
         var vm = this; 
         vm.nomeJogador = $routeParams.nomeJogador;
-        console.log(JSON.stringify($routeParams));
         vm.cartaUm ="";
         vm.cartaDois = "";
         vm.rodadas = 0 ;
@@ -92,7 +91,7 @@
         function cartasIguais(){
             
             vm.acertos = vm.acertos +1;
-            if(vm.acertos == 20 || m.acertos == 20 ){ vm.verificarFimDeJogo()}
+            if(vm.acertos == 20){ vm.verificarFimDeJogo()}
             vm.bloquearClique = false; 
             limparValoresCartas();
         }
@@ -133,7 +132,7 @@
         function cadastrarRanking() {
             var rest = {
                 method: 'POST',
-                url: "http://localhost:8080/cadastrarRanking",
+                url: "http://localhost:8080/ranking",
                 headers: { 'Content-Type': 'application/json' },
                 data: { data: { nomeJogador: vm.nomeJogador, 
                                 acertos:  vm.acertos, 

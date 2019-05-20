@@ -20,15 +20,13 @@
         function buscarRanking(){
             var requisicao = {
                 method: 'GET',
-                url: "http://localhost:8080/buscarRanking" ,
+                url: "http://localhost:8080/ranking" ,
                 headers: { 'Content-Type': 'application/json' }
             };
 
             $http(requisicao).then(function (e) {
                 if(e.data){
                     vm.listaRankig = e.data;
-
-                    console.log("retorno get" + JSON.stringify( vm.listaRankig));
                 }
             });
         }
